@@ -1,0 +1,55 @@
+Streams:
+
+Why? -> Functional style programming, support of parallelism, lazy processing(intermediate functions not executed until a terminal operation is called)
+
+Terminal operations:
+forEach()
+collect() -> Collectors.toSet(), Collectors.toMap(), Collectors.toList(), Collectors.joining("delimeter")
+findFirst().orElse()
+
+
+Intermediate operations:
+map()
+filter()
+flatmap()
+sorted()
+
+Short circuit operations
+skip(int)
+limit(int)
+
+max(), min()
+max(Comparator.comparing(Object::getParameter)).orElseThrow(NoSuchException::new)
+
+reduce() => list -> int, map ->list
+
+parallel streams -> for larger datasets and independent operations
+
+1. Intermediate Operations
+These return a Stream itself, allowing method chaining. They are lazy, meaning they don’t execute until a terminal operation is invoked.
+
+Operation	Description
+filter()	Filters elements based on a predicate
+map()	Transforms each element
+flatMap()	Flattens nested streams
+distinct()	Removes duplicates
+sorted()	Sorts the stream
+peek()	Performs an action (used for debugging/logging)
+limit(n)	Truncates the stream to n elements
+skip(n)	Skips the first n elements
+🔸 2. Terminal Operations
+These trigger the actual processing and return a non-stream result (like a list, count, or void).
+
+Operation	Description
+forEach()	Performs an action for each element
+collect()	Gathers the result into a collection (List, Set, Map, etc.)
+reduce()	Reduces elements to a single value (sum, product, etc.)
+count()	Returns the count of elements
+anyMatch()	Checks if any element matches a condition
+allMatch()	Checks if all elements match a condition
+noneMatch()	Checks if none match the condition
+findFirst()	Returns the first element (Optional)
+findAny()	Returns any element (useful with parallel streams)
+min() / max()	Returns min or max element based on comparator
+
+
