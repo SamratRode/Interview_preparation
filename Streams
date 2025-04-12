@@ -4,7 +4,7 @@ Why? -> Functional style programming, support of parallelism, lazy processing(in
 
 Terminal operations:
 forEach()
-collect() -> Collectors.toSet(), Collectors.toMap(), Collectors.toList(), Collectors.joining("delimeter")
+collect() -> Collectors.toSet(), Collectors.toMap(), Collectors.toList(), Collectors.joining("delimeter"), (boolean,list)Collectors.partitioningBy(), (key,val)Collectors.groupingBy()
 findFirst().orElse()
 
 
