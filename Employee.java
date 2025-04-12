@@ -1,8 +1,38 @@
+import java.util.List;
+
 public class Employee {
     private int id;
     private String name;
     private int age;
     private int salary;
+    private List<String> projects;
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", projects=" + projects +
+                '}';
+    }
+
+    public Employee(int id, String name, int age, int salary, List<String> projects) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.projects = projects;
+    }
+
+    public List<String> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<String> projects) {
+        this.projects = projects;
+    }
 
     public String getName() {
         return name;
@@ -36,20 +66,6 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Employee(int id, String name, int age, int salary) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-    }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                '}';
-    }
 }
+
