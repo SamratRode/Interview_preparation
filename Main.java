@@ -64,10 +64,10 @@ public class Main {
                 .getAsInt();
         System.out.println(max);
         List<Employee> employees=new ArrayList<>();
-        employees.add(new Employee(1,"Samrat",24, 2500000));
-        employees.add(new Employee(1,"Kriti",23, 1500000));
-        employees.add(new Employee(1,"Anjali",25, 4500000));
-        employees.add(new Employee(1,"Eshika",23, 5500000));
+        employees.add(new Employee(1,"Samrat",24, 2500000,List.of("DORA","Navigators")));
+        employees.add(new Employee(1,"Kriti",23, 1500000, List.of("testing1","testing2")));
+        employees.add(new Employee(1,"emp1",25, 4500000, List.of("anj1","anj2")));
+        employees.add(new Employee(1,"emp2",23, 5500000,List.of("int1","int2")));
         List<Employee> sortScene=employees.
                 stream().
                 sorted((o1,o2)->(o1.getSalary()-o2.getSalary())).
@@ -100,7 +100,22 @@ public class Main {
         map.forEach((k,v)-> System.out.println(k+" "+v));
 
         //flatmap, entry Set Example remaining
+        //odd even partition
+        Map<Boolean,List<Integer>> partitioned=al.stream().
+                collect(Collectors.partitioningBy((x)->x%2==0));
+
+        List<Integer> even=partitioned.get(true);
+        System.out.println(even);
+
+        List<String> allProjects=employees.
+                stream().
+                flatMap(e->e.getProjects().stream()).
+                distinct().
+                peek(a-> System.out.println(a)).toList();
     }
+
+
+
 
 
 
